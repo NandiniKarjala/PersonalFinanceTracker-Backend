@@ -41,8 +41,9 @@ public class BudgetController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteBudget(@PathVariable Long id) {
+    public void deleteBudget(@PathVariable Long id) {
+
         budgetService.deleteBudget(id);
-        return "Budget deleted successfully";
+
     }
 }

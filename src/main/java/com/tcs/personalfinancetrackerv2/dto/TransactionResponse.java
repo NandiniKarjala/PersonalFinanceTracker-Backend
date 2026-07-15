@@ -1,8 +1,5 @@
 package com.tcs.personalfinancetrackerv2.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,23 +14,22 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TransactionRequest {
+public class TransactionResponse {
 
-    @NotNull(message = "User ID is required")
+    private Long id;
+
     private Long userId;
 
-    @NotNull(message = "Amount is required")
-    @Positive(message = "Amount must be greater than zero")
+    private String username;
+
     private BigDecimal amount;
 
-    @NotBlank(message = "Category is required")
     private String category;
 
-    @NotBlank(message = "Transaction type is required")
     private String transactionType;
 
     private String description;
 
-    @NotNull(message = "Transaction date is required")
     private LocalDate date;
+
 }
